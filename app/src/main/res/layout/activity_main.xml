@@ -28,8 +28,8 @@
         android:id="@+id/etvUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="46sp"
-        android:layout_marginRight="45sp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="45dp"
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
         android:ems="10"
         android:hint="Username"
@@ -40,34 +40,10 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.103" />
-
-    <EditText
-        android:id="@+id/etvPassword"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="46sp"
-        android:layout_marginRight="45sp"
-        android:autoText="false"
-        android:drawableLeft="@drawable/ic_baseline_lock_open_24"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="date|textUri|textShortMessage|textLongMessage|textAutoCorrect|none|numberSigned|textVisiblePassword|textWebEditText|textMultiLine|textNoSuggestions|textFilter|number|datetime|textWebEmailAddress|textPersonName|text|textPhonetic|textCapSentences|textPassword|textAutoComplete|textImeMultiLine"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:password="false"
-        android:textColor="@color/material_dynamic_primary20"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etvUserName"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.082" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -77,10 +53,10 @@
         android:text="Enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etvPassword"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintTop_toBottomOf="@+id/frgotPasswordInv"
+        app:layout_constraintVertical_bias="0.08" />
 
     <TextView
         android:id="@+id/frgotPasswordInv"
@@ -88,20 +64,42 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password? Click here."
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etvPassword"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.058" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="101dp"
-        android:layout_height="111dp"
+    <TextView
+        android:id="@+id/itvSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Account? Sign up here."
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.325" />
+
+    <EditText
+        android:id="@+id/etvPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="45dp"
+        android:drawableStart="@drawable/ic_baseline_lock_open_24"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etvUserName"
+        app:layout_constraintVertical_bias="0.037" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
