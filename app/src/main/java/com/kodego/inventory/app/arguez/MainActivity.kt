@@ -30,8 +30,19 @@ class MainActivity : AppCompatActivity() {
         val correctUsername: String = "admin"
         val correctPassword: String = "admin123"
 
+        val correctUsername2: String = "user_Paul"
+        val correctPassword2: String = "pass123"
+
         if((correctUsername == userName) && (correctPassword == password)){
             val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("nameID", userName)
+            startActivity(intent)
+            finish()
+            Toast.makeText(applicationContext, "Logging in...", Toast.LENGTH_SHORT).show()
+            return true
+        }else if((correctUsername2 == userName) && (correctPassword2 == password)) {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("nameID", userName)
             startActivity(intent)
             finish()
             Toast.makeText(applicationContext, "Logging in...", Toast.LENGTH_SHORT).show()
