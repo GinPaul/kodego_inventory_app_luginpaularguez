@@ -7,6 +7,8 @@ import com.kodego.inventory.app.arguez.databinding.RowItemBinding
 
 class ProductAdapter (val products: List<Products>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
+    var onItemClick: ((Products) -> Unit)? = null
+
     inner class ProductViewHolder(val binding: RowItemBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -21,6 +23,9 @@ class ProductAdapter (val products: List<Products>): RecyclerView.Adapter<Produc
             imgProduct.setImageResource(products[position].imageName)
             tvitemName.text = products[position].itemName
             tvDescription.text = products[position].itemDescription
+        }
+        holder.itemView.setOnClickListener(){
+            onItemClick?.invoke(products[position])
         }
     }
 
