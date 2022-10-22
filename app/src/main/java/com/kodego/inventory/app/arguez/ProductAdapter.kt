@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kodego.inventory.app.arguez.databinding.RowItemBinding
 
-class ProductAdapter (val products: List<Products>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter (val products: MutableList<Products>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     var onItemClick: ((Products) -> Unit)? = null
+    var onUpdateButtonClick: ((Products, Int) -> Unit)? = null
+    var onDeleteButtonClick: ((Products, Int) -> Unit)? = null
 
     inner class ProductViewHolder(val binding: RowItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -23,6 +25,13 @@ class ProductAdapter (val products: List<Products>): RecyclerView.Adapter<Produc
             imgProduct.setImageResource(products[position].imageName)
             tvitemName.text = products[position].itemName
             tvDescription.text = products[position].itemDescription
+            tvQuantity.text = products[position].quantity.toString()
+            imgBtnUpdate.setOnClickListener(){
+                onUpdateButtonClick?.invoke(products[position],position)
+            }
+            imgBtnDelete.setOnClickListener(){
+                onDeleteButtonClick?.invoke(products[position],position)
+            }
         }
         holder.itemView.setOnClickListener(){
             onItemClick?.invoke(products[position])
