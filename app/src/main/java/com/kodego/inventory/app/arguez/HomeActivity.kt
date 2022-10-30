@@ -21,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
 
         //data source
         var productList: MutableList<Products> = mutableListOf<Products>(
-            Products(R.drawable.coffeemaker, "Coffee Maker", "This is a coffee maker.", 10),
+            Products(R.drawable.coffeemaker, "Coffee Maker", "This is a coffee maker.", 10) ,
             Products(R.drawable.paintbrush, "Paint Brush", "This is a premium paint brush.", 50),
             Products(
                 R.drawable.toyotagenuineparts,
@@ -98,6 +98,7 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("itemDescription", it.itemDescription)
             intent.putExtra("itemImage", it.imageName)
             intent.putExtra("quantity", it.quantity)
+
             startActivity(intent) //>>don't place "finish" so that the can go back the product list
         }
 
@@ -121,6 +122,11 @@ class HomeActivity : AppCompatActivity() {
         binding.myRecycler.adapter = adapter
         binding.myRecycler.layoutManager = LinearLayoutManager(this)
 
+        binding.btnMoreInfo.setOnClickListener(){
+            Toast.makeText(applicationContext, "Providing more information...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ViewPagerActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -170,9 +176,11 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+
                 //get data from another screen
 //        var name = intent.getStringExtra("nameID")
 //
 //        binding.tvWelcome.text = "Welcome $name"
     }
+
 }
