@@ -29,7 +29,7 @@ class Loginv2InvApp : AppCompatActivity() {
         val correctUsername: String = "admin"
         val correctPassword: String = "admin123"
 
-        val correctUsername2: String = "user_Paul"
+        val correctUsername2: String = "Paul"
         val correctPassword2: String = "pass123"
 
         if((correctUsername == userName) && (correctPassword == password)){

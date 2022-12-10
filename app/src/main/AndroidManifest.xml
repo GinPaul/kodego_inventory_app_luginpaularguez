@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".ProductDetailActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -34,7 +34,7 @@
         <!-- </activity> -->
         <activity
             android:name=".HomeActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -61,6 +61,18 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Loginv2InvApp"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

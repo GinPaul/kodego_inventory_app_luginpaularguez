@@ -23,3 +23,4 @@ class ProductDetailActivity : AppCompatActivity() {
         binding.tvQuantityProdDetail.text = quantity.toString()
     }
 }
+
